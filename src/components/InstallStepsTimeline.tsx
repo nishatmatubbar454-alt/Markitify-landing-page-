@@ -181,32 +181,38 @@ export const InstallStepsTimeline: React.FC<InstallStepsTimelineProps> = ({ onCo
             </div>
           </div>
 
-          {/* Item 4: Contact Support */}
-          <div className="p-3 rounded-2xl bg-blue-50/70 border border-blue-100 flex items-center justify-between gap-3">
-            <div className="flex items-center space-x-2.5">
-              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-                <Headphones className="w-4 h-4" />
+          {/* Item 4: Contact Support via Telegram @HalpLine_bot */}
+          <div className="p-3.5 rounded-2xl bg-sky-50/80 border border-sky-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-start space-x-3">
+              <div className="w-9 h-9 rounded-xl bg-[#229ED9] text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
               </div>
               <div>
-                <p className="font-bold text-gray-900 text-[12.5px] sm:text-xs">
-                  যোগাযোগ ও সহায়তা
+                <p className="font-bold text-gray-900 text-[13px] sm:text-sm flex items-center gap-1.5">
+                  যোগাযোগ ও কাস্টমার সাপোর্ট
+                  <span className="text-[10px] bg-sky-200/80 text-sky-950 font-bold px-1.5 py-0.5 rounded-md">
+                    ইম্পরট্যান্ট
+                  </span>
                 </p>
-                <p className="text-gray-600 text-[11px] sm:text-[11.5px] leading-tight">
-                  যে কোন সমস্যা আমাদের সাথে যোগাযোগ করুন।
+                <p className="text-gray-700 text-[12px] sm:text-xs mt-0.5 leading-relaxed">
+                  যে কোন সমস্যা সরাসরি আমাদের সাথে যোগাযোগ করতে টেলিগ্রামে <strong className="text-[#229ED9] font-bold">@HalpLine_bot</strong> এ মেসেজ দিন।
                 </p>
               </div>
             </div>
 
-            {onContactClick && (
-              <button
-                type="button"
-                onClick={onContactClick}
-                className="py-1.5 px-3.5 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-xs shrink-0 cursor-pointer flex items-center gap-1.5"
-              >
-                <span>যোগাযোগ</span>
-                <MessageSquare className="w-3.5 h-3.5" />
-              </button>
-            )}
+            <a
+              href="https://t.me/HalpLine_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-2 px-3.5 rounded-xl bg-[#229ED9] hover:bg-[#1d8bc0] active:scale-95 text-white text-xs font-bold transition-all shadow-xs shrink-0 flex items-center justify-center gap-1.5 cursor-pointer self-start sm:self-center"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              <span>@HalpLine_bot</span>
+            </a>
           </div>
         </div>
       </div>
