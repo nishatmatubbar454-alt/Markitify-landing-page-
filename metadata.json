@@ -1,0 +1,6 @@
+{
+  "name": "Marketify - Free YT Video & Music Downloader",
+  "description": "Safe & Free YouTube video and music downloader for Android with APK download, format converter, and security certification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
