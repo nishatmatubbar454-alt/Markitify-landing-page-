@@ -135,7 +135,7 @@ export default function App() {
             />
 
             {/* Installation Steps Timeline & FAQ - directly visible */}
-            <InstallStepsTimeline />
+            <InstallStepsTimeline onContactClick={() => setIsChatModalOpen(true)} />
           </div>
 
           {/* Floating Red Chat Button positioned at bottom right */}

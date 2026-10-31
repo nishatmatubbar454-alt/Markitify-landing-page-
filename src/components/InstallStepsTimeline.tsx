@@ -7,13 +7,20 @@ import {
   ShieldAlert, 
   CheckCheck, 
   ChevronUp, 
-  ChevronDown,
-  PlayCircle,
-  Share2,
-  ShieldCheck
+  ChevronDown, 
+  PlayCircle, 
+  Sparkles, 
+  Lock, 
+  KeyRound, 
+  Headphones, 
+  MessageSquare 
 } from 'lucide-react';
 
-export const InstallStepsTimeline: React.FC = () => {
+interface InstallStepsTimelineProps {
+  onContactClick?: () => void;
+}
+
+export const InstallStepsTimeline: React.FC<InstallStepsTimelineProps> = ({ onContactClick }) => {
   const [isFaqOpen, setIsFaqOpen] = useState(true);
 
   const steps = [
@@ -118,42 +125,88 @@ export const InstallStepsTimeline: React.FC = () => {
         )}
       </div>
 
-      {/* 3. App Usage Guide Card (ব্যবহার করার নিয়ম ও ভিডিও ডাউনলোড করে গ্যালারিতে সেভ রাখার নিয়ম) */}
-      <div className="bg-white rounded-3xl p-5 sm:p-6 shadow-xs border border-gray-100/90 space-y-3">
-        <h4 className="font-bold text-gray-900 text-sm sm:text-base flex items-center gap-2 border-b border-gray-100 pb-2">
+      {/* 3. App Features, Security & Password Recovery Card (ব্যবহার ও অ্যাপ পরিচিতি) */}
+      <div className="bg-white rounded-3xl p-5 sm:p-6 shadow-xs border border-gray-100/90 space-y-3.5">
+        <h4 className="font-bold text-gray-900 text-sm sm:text-base flex items-center gap-2 border-b border-gray-100 pb-2.5">
           <PlayCircle className="w-5 h-5 text-red-500" />
-          Marketify অ্যাপ ব্যবহার করার নিয়ম
+          Marketify অ্যাপ সম্পর্কিত তথ্য ও নিয়ম
         </h4>
 
-        <div className="space-y-2.5 text-xs sm:text-[13px]">
-          <div className="flex items-start space-x-2.5 p-2.5 rounded-xl bg-gray-50/80 border border-gray-100">
-            <Share2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+        <div className="space-y-3 text-xs sm:text-[13px]">
+          {/* Item 1: Video Platform & Viral Links */}
+          <div className="flex items-start space-x-3 p-3 rounded-2xl bg-rose-50/60 border border-rose-100/80">
+            <div className="w-8 h-8 rounded-xl bg-rose-500 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+              <Sparkles className="w-4 h-4" />
+            </div>
             <div>
-              <p className="font-bold text-gray-900">১. লিংক কপি ও পেস্ট:</p>
-              <p className="text-gray-600 text-[11px] sm:text-xs mt-0.5 leading-relaxed">
-                TikTok, Facebook বা YouTube ভাইরাল ভিডিওর 'Share' থেকে 'Copy Link' করে Marketify অ্যাপে পেস্ট করুন।
+              <p className="font-bold text-gray-900 text-[13px] sm:text-sm">
+                ভাইরাল ভিডিও প্ল্যাটফর্ম
+              </p>
+              <p className="text-gray-700 text-[12px] sm:text-xs mt-0.5 leading-relaxed">
+                এটা একটা ভিডিও প্ল্যাটফর্ম। যেখানে বাংলাদেশের সকল টিকটকার দের ভাইরাল লিংক ভিডিও পাওয়া যায়।
               </p>
             </div>
           </div>
 
-          <div className="flex items-start space-x-2.5 p-2.5 rounded-xl bg-gray-50/80 border border-gray-100">
-            <FolderDown className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
+          {/* Item 2: Full Security System & App Lock */}
+          <div className="flex items-start space-x-3 p-3 rounded-2xl bg-emerald-50/60 border border-emerald-100/80">
+            <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+              <Lock className="w-4 h-4" />
+            </div>
             <div>
-              <p className="font-bold text-gray-900">২. গ্যালারিতে সেভ রাখুন (No Watermark):</p>
-              <p className="text-gray-600 text-[11px] sm:text-xs mt-0.5 leading-relaxed">
-                'Download' বাটনে ক্লিক করে ওয়াটারমার্ক ছাড়া সরাসরি ফোনের মেমোরি ও গ্যালারিতে সেভ করে রাখুন।
+              <p className="font-bold text-gray-900 text-[13px] sm:text-sm">
+                ফুল সিকিউরিটি ও অ্যাপ লক
+              </p>
+              <p className="text-gray-700 text-[12px] sm:text-xs mt-0.5 leading-relaxed">
+                অ্যাপস এর মধ্যে ফুল সিকিউরিটি সিস্টেম আছে। অ্যাপ আপনি নিজস্ব পাসওয়ার্ড দিয়ে লক করে রাখতে পারবেন।
               </p>
             </div>
           </div>
 
-          <div className="flex items-start space-x-2.5 p-2.5 rounded-xl bg-gray-50/80 border border-gray-100">
-            <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+          {/* Item 3: Password Recovery / 8888 Code */}
+          <div className="flex items-start space-x-3 p-3 rounded-2xl bg-amber-50/70 border border-amber-200/80">
+            <div className="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+              <KeyRound className="w-4 h-4" />
+            </div>
             <div>
-              <p className="font-bold text-gray-900">৩. ইন্টারনেট ছাড়া অফলাইনে দেখুন:</p>
-              <p className="text-gray-600 text-[11px] sm:text-xs mt-0.5 leading-relaxed">
-                একবার সেভ করে রাখলে কোনো এমবি বা ইন্টারনেট ছাড়াই যেকোনো সময় দেখতে ও শেয়ার করতে পারবেন।
+              <p className="font-bold text-gray-900 text-[13px] sm:text-sm flex items-center gap-2">
+                পাসওয়ার্ড ভুলে গেলে রিকভারি
+                <span className="text-[10px] bg-amber-200/80 text-amber-950 font-black px-1.5 py-0.5 rounded-md font-mono">
+                  কোড: 8888
+                </span>
+              </p>
+              <p className="text-gray-700 text-[12px] sm:text-xs mt-0.5 leading-relaxed">
+                অ্যাপের পাসওয়ার্ড কখনো ভুলে গেলে <strong className="text-gray-900 font-semibold">forget password</strong> ওইখানে গিয়ে <span className="font-bold text-red-600 bg-white px-1.5 py-0.5 rounded border border-amber-200 font-mono">8888</span> টাইপ করলেই আপনার বর্তমান পাসওয়ার্ড দেখতে পারবেন।
               </p>
             </div>
+          </div>
+
+          {/* Item 4: Contact Support */}
+          <div className="p-3 rounded-2xl bg-blue-50/70 border border-blue-100 flex items-center justify-between gap-3">
+            <div className="flex items-center space-x-2.5">
+              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                <Headphones className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="font-bold text-gray-900 text-[12.5px] sm:text-xs">
+                  যোগাযোগ ও সহায়তা
+                </p>
+                <p className="text-gray-600 text-[11px] sm:text-[11.5px] leading-tight">
+                  যে কোন সমস্যা আমাদের সাথে যোগাযোগ করুন।
+                </p>
+              </div>
+            </div>
+
+            {onContactClick && (
+              <button
+                type="button"
+                onClick={onContactClick}
+                className="py-1.5 px-3.5 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-xs shrink-0 cursor-pointer flex items-center gap-1.5"
+              >
+                <span>যোগাযোগ</span>
+                <MessageSquare className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
         </div>
       </div>
