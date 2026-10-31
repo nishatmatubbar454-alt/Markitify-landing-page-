@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { CategoryBadges, CategoryType } from './components/CategoryBadges';
 import { TrustCard } from './components/TrustCard';
@@ -19,6 +19,10 @@ export default function App() {
   const [isChatModalOpen, setIsChatModalOpen] = useState<boolean>(false);
   const [isLangModalOpen, setIsLangModalOpen] = useState<boolean>(false);
   const [securityModalTitle, setSecurityModalTitle] = useState<string | null>(null);
+  
+  useEffect(() => {
+    document.title = "Markitify APK download";
+  }, []);
   
   // Direct APK download link
   const directDownloadUrl = '/downloads/Marketify_v5.2104.apk';

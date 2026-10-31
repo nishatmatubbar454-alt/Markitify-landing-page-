@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center">
           <img
             src="/assets/aistudio/marketify_logo_cropped.png"
-            alt="Marketify Logo"
+            alt="Markitify APK download"
             className="h-12 sm:h-14 w-auto max-h-14 max-w-[190px] sm:max-w-[230px] object-contain drop-shadow-md hover:scale-105 transition-all duration-200"
           />
         </div>
